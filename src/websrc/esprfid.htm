@@ -134,6 +134,7 @@
                 <option value="4">MFRC522 + RDM6300</option>
                 <option value="5">Wiegand + RDM6300</option>
                 <option value="6">PN532 + RDM6300</option>
+                <option value="7">iButton (DS1990A)</option>
             </select>
         </div>
     </div>
@@ -201,6 +202,21 @@
                 </span>
         </div>
     </div>
+    <div class="" id="iButtonForm" style="display:none">
+        <div class="row form-group">
+            <label class="col-xs-3">OneWire Pin<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Choose which ESP port is connected to OneWire pin"></i></label>
+            <span class="col-xs-9 col-md-5">
+                  <select class="form-control input-sm" id="gpioss">
+                    <option value="0">GPIO-0</option>
+                    <option value="2">GPIO-2</option>
+                    <option value="4">GPIO-4</option>
+                    <option value="5">GPIO-5</option>
+                    <option selected="selected" value="15">GPIO-15</option>
+                    <option value="16">GPIO-16</option>
+                  </select>
+                </span>
+        </div>
+    </div>    
     <br>
     <div class="row form-group">
         <label class="col-xs-3">WiFi LED<i style="margin-left: 10px;" class="glyphicon glyphicon-info-sign" aria-hidden="true" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Choose &quot;WiFi LED&quot; pin"></i></label>

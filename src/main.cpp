@@ -55,11 +55,13 @@ int relayPin = 13;
 #include "PN532.h"
 #include <Wiegand.h>
 #include "rfid125kHz.h"
+#include "ibuttonReader.h"
 
 MFRC522 mfrc522 = MFRC522();
 PN532 pn532;
 WIEGAND wg;
 RFID_Reader RFIDr;
+ibuttonReader ibReader;
 
 int rfidss;
 int readerType;

@@ -101,17 +101,24 @@ function handleReader() {
         document.getElementById("wiegandForm").style.display = "none";
         document.getElementById("mfrc522Form").style.display = "block";
         document.getElementById("rc522gain").style.display = "block";
+        document.getElementById("iButtonForm").style.display = "none";
     } else if (rType === 1 || rType === 5) {
         document.getElementById("wiegandForm").style.display = "block";
         document.getElementById("mfrc522Form").style.display = "none";
+        document.getElementById("iButtonForm").style.display = "none";
     } else if (rType === 2 || rType === 6) {
         document.getElementById("wiegandForm").style.display = "none";
         document.getElementById("mfrc522Form").style.display = "block";
         document.getElementById("rc522gain").style.display = "none";
+        document.getElementById("iButtonForm").style.display = "none";
     } else if (rType === 3) {
         document.getElementById("wiegandForm").style.display = "none";
         document.getElementById("mfrc522Form").style.display = "none";
-        document.getElementById("rc522gain").style.display = "none";
+        document.getElementById("iButtonForm").style.display = "none";
+    } else if (rType === 7) {
+        document.getElementById("wiegandForm").style.display = "none";
+        document.getElementById("mfrc522Form").style.display = "none";
+        document.getElementById("iButtonForm").style.display = "block";
     }
 }
 

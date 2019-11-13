@@ -78,7 +78,7 @@ void ICACHE_FLASH_ATTR rfidloop()
 		}
 
 	}
-	else if (readerType > 2)
+	else if (readerType > 2 && readerType <= 6)
 	{
 		while (Serial.available() > 0)
 		{
@@ -179,8 +179,20 @@ void ICACHE_FLASH_ATTR rfidloop()
 				return;
 			}
 		}
+	} else if (readerType == 7) //ibutton
+	{
+		ibReader.loop();
+		if (ibReader.available())
+		{
+			ibReader.getHexId(uid);
+			type = "iButton";
+#ifdef DEBUG
+		Serial.print(F("[ INFO ] iButton UID: "));
+		Serial.print(uid);
+#endif
+			cooldown = millis() + 2000;
+		}
 	}
-
 	else //no reader selected
 	{
 		delay(50);
@@ -417,5 +429,16 @@ void ICACHE_FLASH_ATTR setupPN532Reader(int rfidss)
 			break;
 		}
 	} while (false);
+}
+#endif
+
+#ifndef OFFICIALBOARD
+void ICACHE_FLASH_ATTR setupiButtonReader(int pin)
+{
+	ibReader.begin(pin);						 // Initialize OneWire
+#ifdef DEBUG
+	Serial.printf("[ INFO ] iButton Initialized PIN: %u", pin);
+	Serial.println("");
+#endif
 }
 #endif

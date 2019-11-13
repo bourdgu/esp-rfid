@@ -79,8 +79,14 @@ bool ICACHE_FLASH_ATTR loadConfiguration()
 		rfidss = hardware["sspin"];
 		setupPN532Reader(rfidss);
 	}
+	else if (readerType == 7)
+	{
+		rfidss = hardware["sspin"];
+		setupiButtonReader(rfidss);
+	}
+
 	#ifndef DEBUG
-	if (readerType>2) Serial.begin(9600);
+	if (readerType>2 && readerType<=6) Serial.begin(9600);
 	#endif
 #endif
 	autoRestartIntervalSeconds = general["restart"];

@@ -5,7 +5,7 @@ const WebSocket = require("ws");
 console.log("[ INFO ] You can connect to ws://localhost (default port is 80)");
 
 const wss = new WebSocket.Server({
-    port: 80
+    port: 8090
 });
 
 wss.broadcast = function broadcast(data) {
